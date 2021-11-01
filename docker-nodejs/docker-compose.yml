@@ -1,0 +1,12 @@
+version: "3"
+services:
+  react:
+    image: "react/dev"
+    container_name: "react"
+    build: .
+    volumes:
+      - ~/:/usr/src/app
+    command:
+      sh -c "export HOME=/usr/src/app"
+    ports:
+      - "8080:8080"

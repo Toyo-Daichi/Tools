@@ -1,6 +1,5 @@
-FROM node:latest
+FROM node:17.0.1-slim
 WORKDIR /usr/src/app
-COPY package*.json ./
 RUN npm install -g parcel
 RUN npm install
 EXPOSE 8080
