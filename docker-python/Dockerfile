@@ -7,10 +7,10 @@ RUN yum install -y jq && \
   yum install -y zip
 #
 ARG USERNAME=docker-toyo
-ARG GROUPNAME=docker-toyo
+ARG GROUPNAME=docker-group
 ARG UID=1000
 ARG GID=1000
-RUN groupadd -g ${GID} ${GROUPNAME} && \
+RUN groupadd -g ${GID} -o ${GROUPNAME} && \
   useradd -m -s /bin/bash -u ${UID} -g ${GID} ${USERNAME}
 #
 USER ${USERNAME}
