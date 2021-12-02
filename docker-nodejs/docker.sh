@@ -19,6 +19,7 @@ select status in ${statuses}; do
     docker run -it --rm  \
       -u `id -u ${USER}` \
       -v ${HOME}/:/home/${user_name} -v ${HOME}/.aws/:/home/${user_name}/.aws \
+      -p 8080:8080 -p 39895:39895 \
       ${image_name} /bin/bash --login
   fi
   break
