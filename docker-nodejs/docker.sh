@@ -5,7 +5,7 @@
 # +++ Set configure
 #----------------------------------------------------------------------
 image_name='nodejs'
-user_name='docker-toyo'
+user_name='node'
 #
 statuses='create login'
 
@@ -20,7 +20,7 @@ select status in ${statuses}; do
       -u `id -u ${USER}` \
       -v ${HOME}/:/home/${user_name} -v ${HOME}/.aws/:/home/${user_name}/.aws \
       -p 8080:8080 -p 39895:39895 \
-      ${image_name} /bin/bash --login
+      ${image_name} /bin/bash --login 
   fi
   break
 done
