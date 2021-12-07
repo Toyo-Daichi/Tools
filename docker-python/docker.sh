@@ -19,6 +19,10 @@ select status in ${statuses}; do
   if [ ${status} = 'create' ]; then
     docker build --platform linux/amd64 -t ${image_name} .
   elif [ ${status} = 'login' ]; then
+    echo '============================================================'
+    echo ' +++ AWS_PROFILE' ${AWS_PROFILE}  
+    echo ' Check "export AWS_ACCOUNT_ID=XXXX-XXXX-XXXX"'
+    echo '============================================================'
     docker run -it --rm \
       -v ${HOME}/:/home/${user_name} -v ${HOME}/.aws/:/home/${user_name}/.aws \
       -e AWS_PROFILE -e AWS_DEFAULT_REGION \
