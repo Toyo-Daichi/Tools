@@ -2,7 +2,8 @@ FROM continuumio/anaconda3:2021.05-amazonlinux
 #
 RUN pip install --upgrade pip && \
   pip install awscli && \
-  pip install boto3
+  pip install boto3 && \
+  pip install chalice 
 RUN yum install -y jq && \
   yum install -y zip
 #
