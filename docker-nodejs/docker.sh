@@ -4,7 +4,9 @@
 #----------------------------------------------------------------------
 # +++ Set configure
 #----------------------------------------------------------------------
-image_name='nodejs'
+export AWS_PROFILE='amplify-On38'
+#
+image_name='nodejs/amplify'
 user_name='node'
 #
 statuses='create login'
@@ -19,7 +21,8 @@ select status in ${statuses}; do
     docker run -it --rm  \
       -u `id -u ${USER}` \
       -v ${HOME}/:/home/${user_name} -v ${HOME}/.aws/:/home/${user_name}/.aws \
-      -p 8080:8080 -p 39895:39895 \
+      -e AWS_PROFILE -e AWS_DEFAULT_REGION \
+      -p 3000:3000 -p 8080:8080 -p 39895:39895 \
       ${image_name} /bin/bash --login 
   fi
   break
