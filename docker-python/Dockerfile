@@ -4,6 +4,7 @@ RUN pip install --upgrade pip && \
   pip install awscli && \
   pip install boto3 && \
   pip install chalice 
+#
 RUN yum install -y sudo && \
   yum install -y jq && \
   yum install -y zip && \
