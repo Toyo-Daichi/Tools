@@ -7,7 +7,7 @@
 export AWS_PROFILE='adminUser-On38'
 export AWS_DEFAULT_REGION='ap-northeast-1'
 #
-image_name='golang'
+image_name='golang/aws'
 user_name='docker-toyo'
 #
 statuses='create login'
