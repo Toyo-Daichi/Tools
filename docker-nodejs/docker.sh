@@ -7,7 +7,7 @@
 export AWS_PROFILE='amplify-On38'
 #
 image_name='nodejs/v17'
-user_name='docker-toyo'
+user_name='node'
 #
 statuses='create login'
 
