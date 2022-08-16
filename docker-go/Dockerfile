@@ -2,7 +2,6 @@ FROM golang:1.16.8
 RUN apt-get update && \
   apt-get install -y sudo && \ 
   apt-get install -y git
-RUN go get fyne.io/fyne/v2 
 #
 ARG USERNAME=docker-toyo
 ARG GROUPNAME=docker-group
@@ -14,3 +13,4 @@ RUN groupadd -g ${GID} -o ${GROUPNAME} && \
 #
 USER ${USERNAME}
 WORKDIR /home/${USERNAME}
+EXPOSE 3000

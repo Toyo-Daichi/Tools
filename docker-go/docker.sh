@@ -26,7 +26,8 @@ select status in ${statuses}; do
     docker run -it --rm \
       -v ${HOME}/:/home/${user_name} -v ${HOME}/.aws/:/home/${user_name}/.aws \
       -e AWS_PROFILE -e AWS_DEFAULT_REGION \
-      ${image_name} /bin/bash
+      -p 3000:3000 \
+      ${image_name} /bin/bash 
   fi
   break
 done
