@@ -1,3 +1,4 @@
 # .gitignore
 **/lambda_layer
 **/dist
+**/.env*
